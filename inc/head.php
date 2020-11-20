@@ -1,3 +1,12 @@
+<?php
+session_start();
+var_dump($_SESSION['login']);
+var_dump($_SESSION);
+var_dump($_GET);
+var_dump($_POST);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,11 +52,21 @@
                             Cart
                         </a>
                     </li>
+                    <li>
+                        <a href="/login.php" class="btn btn-warning navbar-btn">
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/deconnexion.php" class="btn btn-warning navbar-btn">
+                            Sign out
+                        </a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid text-right">
-        <strong>Hello Wilder !</strong>
+        <strong>Hello <?php echo $_SESSION['login']; ?> !</strong>
     </div>
 </header>
